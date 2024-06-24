@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title> + Inserir Aluno</title>
+<meta name="author" content="Bruno Guilherme"/>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container" style="margin-top: 25px">
+		
+		<h4>+ Inserir Alunos</h4>
+		<hr>
+		
+		<form method="POST" action="/InsertAlunos" th:object="${aluno}" autocomplete="off">
+
+			<div class="row">
+				
+			<!-- Aluno -->
+				
+				<div class="col-md-4 form-group offset-md-1">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+						<label class="validation-message" th:errors="*{nome}"></label>
+					</div>
+					<label>Nome do Aluno: </label>
+					<input class="form-control" type="text" placeholder="Ex: Fulano da Silva" th:field="*{nome}">
+				</div>
+			</div>
+			
+			<!-- Curso -->
+				
+			<div class="row">
+				<div class="col-md-4 form-group offset-md-1">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('curso')}">
+						<label class="validation-message" th:errors="*{curso}"></label>
+					</div>
+					<label>Selecione o Curso: </label>
+					<select class="form-control" name="curso" th:field="*{curso}">
+					<option th:each="curso : ${T(br.com.academy.Enums.Curso).values()}" th:value="${curso}" th:text="${curso}"></option>
+					</select>
+				</div>
+			</div>
+			
+			<!-- Matricula -->
+			
+			<div class="row">
+				<div class="col-md-4 form-group offset-md-1">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}">
+						<label class="validation-message" th:errors="*{matricula}"></label>
+					</div>
+					<label>Gerar Matricula: </label>
+					<input id="matricula" class="form-control" th:field="*{matricula}">
+					<button type="button" onclick="GerarMatricula();" class="btn btn-dark" style="margin-top: 8px">Gerar</button>
+				</div>
+			</div>
+			
+			<!-- Status -->
+			
+			<div class="row">
+				<div class="col-md-4 form-group offset-md-1">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}">
+						<label class="validation-message" th:errors="*{status}"></label>
+					</div>
+					<label>Selecione o Status: </label>
+					<select class="form-control" name="status" th:field="*{status}">
+						<option th:each="status : ${T(br.com.academy.Enums.Status).values()}" th:value="${status}" th:text="${status}"></option>
+					</select>
+				</div>
+			</div>
+			
+			<!-- Turno -->
+			<!-- Fazer uma lista com um Enum-->
+			<div class="row">
+				<div class="col-md-4 form-group offset-md-1">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('turno')}">
+						<label class="validation-message" th:errors="*{turno}"></label>
+					</div>
+					<label>Turno: </label>
+					<input class="form-control" type="text" placeholder="Ex: Manha" th:field="*{turno}">
+				</div>
+			</div>
+			
+			<br>
+			<div class="row">
+				<button type="submit" class="btn btn-success offset-md-1">Salvar</button>
+				&nbsp;&nbsp;&nbsp;
+				<a th:href="@{index}" class="btn btn-danger">Voltar</a>
+			</div>
+			
+		</form>
+	</div>
+			
+		
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"> </div>
+	
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

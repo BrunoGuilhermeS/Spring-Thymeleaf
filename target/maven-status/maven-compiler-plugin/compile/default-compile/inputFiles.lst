@@ -1,0 +1,15 @@
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\AcademyApplication.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\service\ServiceUsuario.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\dao\UsuarioDao.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\model\Aluno.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\Enums\Curso.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\Enums\Status.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\service\ServiceExc.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\controllers\AlunoController.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\model\Usuario.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\Exceptions\CryptoExistException.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\util\Util.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\Exceptions\EmailExistsException.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\dao\AlunoDao.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\Exceptions\UserExistsException.java
+C:\Development\Workspace\academy-project\academy\src\main\java\br\com\academy\controllers\UsuarioController.java
